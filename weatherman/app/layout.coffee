@@ -18,4 +18,4 @@ if Meteor.isServer
   Meteor.methods
     getQuote: (stock) ->
       url = "http://api.money.126.net/data/feed/#{stock}"
-      HTTP.call 'GET', url
+      HTTP.call "GET", url

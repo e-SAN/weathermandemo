@@ -1,2 +1,2 @@
-# weathermandemo
-weathermandemo for showing how to connect to json
+# quotemandemo
+quotemandemo for showing how to connect to json

@@ -12,6 +12,6 @@ if Meteor.isClient
   Template.layout.events
     'change .stocks': (e,t) ->
       stock = (t.find '.stocks').value
-      Meteor.call 'getQuote', stock, (err, results)->
-        unless err?
-          Session.set 'results', results[stock]
+      GetData.quotes {source: '126.net', ids: stock}, (data)->
+        # dealing with the data here, for this case it's for a single stock
+        Session.set 'results', data[stock]

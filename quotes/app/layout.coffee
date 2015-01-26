@@ -20,15 +20,16 @@ if Meteor.isClient
 
   Template.history.helpers
     quot: ->
-      results = (Session.get 'history')
+      results = Session.get 'history'
       if results?
-        return results
+        row = results.rows[0]
+        return "行情：Date #{row.DATE} Code #{row.CODE} Close #{row.TCLOSE}"
         #return "#{results.symbol}#{results.name}: #{results.price}"
 
   Template.history.events
     'change .stocks': (e,t) ->
       stock = (t.find '.stocks').value
       source = '163.com' # history
-      GetData.quotes {source: source, ids: stock}, (data)->
+      GetData.quotes {source: source, ids: stock, start:20080808, end:20150126}, (data)->
         # dealing with the data here, for this case it's for a single stock
         Session.set 'history', data

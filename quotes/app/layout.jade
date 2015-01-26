@@ -1,7 +1,21 @@
 template(name = "layout")
   .container
     .hero-unit
-      h1 get quote
+      h1 Quote
+    select.stocks
+      option 1000001
+      option 0600000
+      option 1159915
+
+
+    .page-header
+      h1
+        small #{quot}
+
+template(name = "history")
+  .container
+    .hero-unit
+      h1 History Quote
     select.stocks
       option 1000001
       option 0600000

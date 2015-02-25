@@ -37,6 +37,7 @@ if Meteor.isClient
 
       series: [{
         name: Session.get 'id'
+        type: 'candlestick'
         data: Session.get 'history'
         tooltip:
           valueDecimals: 3

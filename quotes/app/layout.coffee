@@ -30,6 +30,6 @@ if Meteor.isClient
     'change .stocks': (e,t) ->
       stock = (t.find '.stocks').value
       source = '163.com' # history
-      GetData.quotes {source: source, ids: stock, start:20080808, end:20150126}, (data)->
+      GetData.quotes {source: source, ids: stock, start:20140808, end:20150126}, (data)->
         # dealing with the data here, for this case it's for a single stock
         Session.set 'history', data

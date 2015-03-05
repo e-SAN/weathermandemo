@@ -1,0 +1,13 @@
+template(name='cardBody')
+  .panel-body
+    +history
+    //+layout
+
+template(name = "history")
+  .container
+    .hero-unit
+      h1 #{id}
+    .page-header
+    .page-body
+      #container-remote
+      //#container-remote(style='min-width: 310px; height: 400px;')

@@ -53,8 +53,9 @@ if Meteor.isClient
       source = '163.com' # history
 
       Session.set 'id', stock
-
-      GetData.quotes {source: source, ids: stock, start:20080801, end:20150126}, (data)->
+      date = new Date()
+      end = date.year * 1000 + date.hour * 100 + date.day
+      GetData.quotes {source: source, ids: stock, start:20080801, end:end}, (data)->
 
         # dealing with the data here, for this case it's for a single stock
         Session.set 'history', GetData.rows

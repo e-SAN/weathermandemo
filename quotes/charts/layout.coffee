@@ -28,6 +28,7 @@ if Meteor.isClient
         #return "#{results.symbol}#{results.name}: #{results.price}"
 
   renderChart = ->
+
     $("#container-remote").highcharts "StockChart",
       rangeSelector:
         selected: 1
@@ -45,6 +46,9 @@ if Meteor.isClient
       ]
 
   Template.history.rendered = ->
+    Highcharts.setOptions
+      chart:
+        borderWidth: 2
     renderChart()
 
   Template.cardHeading.events

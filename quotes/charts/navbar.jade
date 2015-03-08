@@ -1,6 +1,6 @@
 template(name='thenavbar')
   //--
-  .navbar.navbar-default.navbar-fixed-top(role='navigation')
+  .navbar.navbar-default(role='navigation')
     .container
       .navbar-header
         button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
@@ -14,18 +14,18 @@ template(name='thenavbar')
       button.btn.btn-default.btn-menu.pull-left.offcanvas-toggle(type='button')
         i.fa.fa-lg.fa-bars
         span Menu
-      a.navbar-brand(title='Customers v{{getAppVersion}}', href='/') Customers
+      a.navbar-brand(title='Customers v{{getAppVersion}}', href='/') 大哉乾元
       .navbar-collapse.collapse
         ul.nav.navbar-nav
           li.active
-            a(href='/cardshome')
+            a(href='http://highcharts.com')
               i.fa.fa-users
-              |               Cards
+              |               Highcharts
           li
             a(href='#')
               i.fa.fa-building-o
-              |               Companies
+              |               基金
           li
             a(href='/admin')
               i.fa.fa-gears
-              |               Admin
+              |               控制台

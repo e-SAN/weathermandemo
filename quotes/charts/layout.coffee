@@ -18,6 +18,7 @@ if Meteor.isClient
         Session.set 'results', data[stock]
         #Session.set 'results', data[0...200]
 
+  # http://www.highcharts.com/docs/working-with-data/data-module
   Template.history.helpers
     id: -> Session.get 'id'
     quot: ->
@@ -46,8 +47,15 @@ if Meteor.isClient
       ]
 
   Template.history.rendered = ->
+    # http://www.highcharts.com/docs/getting-started/how-to-set-options
     Highcharts.setOptions
       chart:
+        backgroundColor:
+          linearGradient: [0, 500, 0, 500]
+          stops: [
+              [0, 'rgb(255, 255, 255)']
+              [1, 'rgb(240, 240, 255)']
+          ]
         borderWidth: 2
     renderChart()
 

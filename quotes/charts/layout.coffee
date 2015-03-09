@@ -30,13 +30,14 @@ if Meteor.isClient
 
   renderChart = ->
 
-    $("#container-remote").highcharts "StockChart",
+    ($ "#container-remote").highcharts "StockChart",
       rangeSelector:
         selected: 1
 
       title:
         text: Session.get 'id'
-
+      subtitle: 
+        text: 'realtime'
       series: [{
         name: Session.get 'id'
         type: 'candlestick'

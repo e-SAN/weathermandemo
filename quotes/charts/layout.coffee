@@ -1,4 +1,7 @@
 if Meteor.isClient
+  Template.layout.rendered = ->
+
+
   Template.layout.helpers
     quot: ->
       results = (Session.get 'results')
@@ -36,7 +39,7 @@ if Meteor.isClient
 
       title:
         text: Session.get 'id'
-      subtitle: 
+      subtitle:
         text: 'realtime'
       series: [{
         name: Session.get 'id'
@@ -59,6 +62,22 @@ if Meteor.isClient
           ]
         borderWidth: 2
     renderChart()
+
+    $.get 'test.csv', (csv)->
+      ($ '#container').highcharts
+          chart:
+              type: 'column'
+
+          data:
+              csv: csv
+
+          title:
+              text: 'Fruit Consumption'
+
+          yAxis:
+              title:
+                  text: 'Units'
+
 
   Template.cardHeading.events
     'change .stocks': (e,t) ->
